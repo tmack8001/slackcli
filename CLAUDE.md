@@ -88,7 +88,7 @@ bun run build:all          # All platforms
 
 ### Entry Point & Command Structure
 
-`src/index.ts` registers seven Commander.js command groups: `auth`, `canvas`, `conversations`, `messages`, `saved`, `search`, `update`. Each group is implemented in `src/commands/` and delegates to `src/lib/` modules.
+`src/index.ts` registers nine Commander.js command groups: `auth`, `canvas`, `conversations`, `messages`, `saved`, `search`, `team`, `usergroups`, `update`. Each group is implemented in `src/commands/` and delegates to `src/lib/` modules.
 
 ### Dual Authentication
 
@@ -121,6 +121,7 @@ Two auth types coexist throughout the codebase:
 | `src/lib/interactive-input.ts` | Multi-line terminal input (double-Enter or Ctrl+D to submit) |
 | `src/lib/saved.ts` | Enriches saved-for-later items (resolves messages & channels) |
 | `src/lib/unread.ts` | Fetches and resolves unread channel data |
+| `src/lib/usergroups.ts` | Normalizes user groups, resolves members, read-modify-write membership |
 | `src/lib/updater.ts` | Self-update via GitHub releases |
 | `src/lib/canvas-parser.ts` | Slack Canvas HTML to Markdown converter (zero deps, Quip-based HTML) |
 
